@@ -30,3 +30,10 @@
 
 ### Live Demo
 Hosted Link : https://acebikes.netlify.app/
+
+## Installation 🌟:
+- [x] Fork it
+- [x] Clone it
+- [x] Go to the directory 
+- [x] Run `npm install`
+- [x] Run `npm run dev`   
