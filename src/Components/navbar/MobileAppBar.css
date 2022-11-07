@@ -1,0 +1,11 @@
+/* @media only screen and (max-width: 600px){
+    .parent{
+        display: flex;
+        min-width: 10vh;
+    }
+}
+@media only screen and (min-width: 60px){
+    .parent{
+        display:none;
+    }
+} */
