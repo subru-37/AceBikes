@@ -32,8 +32,8 @@
 Hosted Link : https://acebikes.netlify.app/
 
 ## Installation 🌟:
-- [x] Fork it
-- [x] Clone it
-- [x] Go to the directory 
-- [x] Run `npm install`
-- [x] Run `npm run dev`   
+
+### To install
+`npm install`
+### To run the code
+`npm run dev`   
