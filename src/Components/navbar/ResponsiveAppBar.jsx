@@ -64,44 +64,8 @@ const ResponsiveAppBar = () => {
             Ace Bikes
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+
           {/* add your logo here replacing adbicon */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -114,6 +78,8 @@ const ResponsiveAppBar = () => {
               fontFamily: "'Montserrat', sans-serif",
               color: 'inherit',
               textDecoration: 'none',
+              justifyContent: 'center',
+              margin: '0px'
             }}
           >
             Ace Bikes
@@ -132,10 +98,10 @@ const ResponsiveAppBar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <div className='end_icons'>
-                <IconButton>
+                <IconButton sx={{display:{ xs: 'none',md:'flex'}}}>
                   <ShoppingCartSharpIcon/>
                 </IconButton>
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, display:{ xs: 'none',md:'flex'} }}>
                   <Avatar alt="Remy Sharp" src={pp} />
                 </IconButton>
             </div>
