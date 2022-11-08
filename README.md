@@ -29,4 +29,11 @@
 ## 🔧 Project Demo:
 
 ### Live Demo
-Hosted Link : 
+Hosted Link : https://acebikes.netlify.app/
+
+## Installation 🌟:
+
+### To install
+`npm install`
+### To run the code
+`npm run dev`   
