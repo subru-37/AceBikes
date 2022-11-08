@@ -13,7 +13,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
-import './ResponsiveAppBar.css'
+import './ResponsiveAppBar.css';
+import {Link} from 'react-router-dom';
 import pp from "../../assets/jpg/IMG20221025172200.jpg"
 const pages = ['Cycles', 'Accessories', 'About Us'];
 const settings = ['Profile', 'Account', 'Logout'];
@@ -41,7 +42,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar sx={{backgroundColor: '#FF570C !important', position: 'fixed'}}>
+    <AppBar sx={{backgroundColor: '#FF570C !important', position: 'static'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{justifyContent: 'space-between'}}>
 		{/* add your logo here replacing adbicon */}
@@ -50,7 +51,6 @@ const ResponsiveAppBar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -59,7 +59,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            Ace Bikes
+            <Link className="Links" to='/'>Ace Bikes</Link>
           </Typography>
 
 
