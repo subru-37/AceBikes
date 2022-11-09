@@ -10,20 +10,28 @@ import { Avatar } from '@mui/material';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const MobileAppBar = () => {
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xxs: 0,
+        xs: 360,
+        sm: 600,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      },
+    },
+  });
   const [value, setValue] = useState(0);
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
   useEffect(()=>{
     window.addEventListener('resize', ()=>{
       setWidth(window.innerWidth)
     })
-    return () => {
-      window.removeEventListener('resize', ()=>{
-        setWidth(window.innerWidth)
-      });
-    };
-  })
+  },[width])
 
   const pages = [
     {
@@ -48,24 +56,32 @@ const MobileAppBar = () => {
     }
   ];
   return (
-    <Box sx={{ justifyContent: 'space-between'}}>
-      <BottomNavigation
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-        sx={{ backgroundColor: '#FF570C !important', position: 'fixed', display:{xs:'flex',md:'none'}, bottom:'0px', width:`${width}px`, justifyContent: 'space-around' }}
-      >
-        {pages.map(x=>{
-          const {icon , label} = x;
-          console.log(x)
-          return(
-            <BottomNavigationAction label={label} icon={icon} />
-          );
-        })}
-      </BottomNavigation>
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          sx={{ backgroundColor: '#FF570C !important', 
+                position: 'fixed', 
+                display:{xxs:'flex',md:'none'}, 
+                bottom:'0px', 
+                height: 'auto',
+                width:`${width}px`, 
+                justifyContent: {xxs: 'center', xs: 'space-around' },
+                flexWrap: {xxs: 'wrap', xs: 'nowrap'}}}
+        >
+          {pages.map(x=>{
+            const {icon , label} = x;
+            return(
+              <BottomNavigationAction key={label} label={label} icon={icon} />
+            );
+          })}
+        </BottomNavigation>
+      </Box>
+    </ThemeProvider>
   );
 };
 
