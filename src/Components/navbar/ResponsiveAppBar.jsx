@@ -10,8 +10,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import './ResponsiveAppBar.css';
 import {Link} from 'react-router-dom';
@@ -21,14 +19,7 @@ const settings = ['Profile', 'Account', 'Logout'];
 
 
 const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
-  console.log(matches)
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -47,20 +38,18 @@ const ResponsiveAppBar = () => {
         <Toolbar disableGutters sx={{justifyContent: 'space-between'}}>
 		{/* add your logo here replacing adbicon */}
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
+          <Box
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: "'Montserrat', sans-serif",
               color: 'inherit',
               textDecoration: 'none',
+              fontSize: '1.5rem'
             }}
           >
             <Link className="Links" to='/'>Ace Bikes</Link>
-          </Typography>
+          </Box>
 
 
           {/* add your logo here replacing adbicon */}
