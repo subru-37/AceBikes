@@ -7,7 +7,6 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import InfoIcon from '@mui/icons-material/Info';
 import pp from "../../assets/jpg/IMG20221025172200.jpg"
 import { Avatar } from '@mui/material';
-import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -57,7 +56,7 @@ const MobileAppBar = () => {
   ];
   return (
     <ThemeProvider theme={theme}>
-      <Box>
+      <div>
         <BottomNavigation
           showLabels
           value={value}
@@ -80,7 +79,7 @@ const MobileAppBar = () => {
             );
           })}
         </BottomNavigation>
-      </Box>
+      </div>
     </ThemeProvider>
   );
 };

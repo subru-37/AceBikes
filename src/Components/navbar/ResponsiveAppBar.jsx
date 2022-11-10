@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
@@ -53,24 +52,20 @@ const ResponsiveAppBar = () => {
 
 
           {/* add your logo here replacing adbicon */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
+          <Box
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
               fontFamily: "'Montserrat', sans-serif",
               color: 'inherit',
               textDecoration: 'none',
+              fontSize: '1.5rem',
               justifyContent: 'center',
-              margin: '0px'
+              width: '100vw'
             }}
           >
-            Ace Bikes
-          </Typography>
+            <Link className="Links" to='/'>Ace Bikes</Link>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'flex-end', maxWidth:'75vw' }}>
             {pages.map((page) => (
               <Button
@@ -110,7 +105,7 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Box sx={{textAlign: 'center'}}>{setting}</Box>
                 </MenuItem>
               ))}
             </Menu>
